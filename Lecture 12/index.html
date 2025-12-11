@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="">
+        <a href="../index.html">Go Back</a>
+        <h1>Lecture 12</h1>
+        <ul>
+            <!--Slide 1-->
+            <hr>
+            <li>
+                <h2>Abstract</h2>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide1.JPG" width="1000px" alt="slide 1"/>
+                <p>
+                    This lecture is about the boundary layer solution for the flat plate, where self similar solution is possible. We have seen how the Boundary layer equation might turn out in the case of a general body. (without the solution being self similar).
+                </p>
+            </li>
+
+            <!--Silde 2-->
+            <hr>
+            <li>
+                <h2>Simplified Governing equation for flat plate</h2>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide2.JPG" width="1000px" alt="slide 2"/>
+                <p>
+                    Consider the flat plate at zero angle of attack.
+                    We know the propertites at the outer edge of the boundary layer which are represented by \(U_e,T_e,\rho_e\) etc are known to use since these
+                    are the properties of boundary layer at the outer edge, and these are known from the invicid layer theory.<br>
+                    And these values are all constant for the case of flow over the flat plate.
+                </p>
+                <p>
+                    The x-momentum, y-momentum, and energy equations that were derived earlier, are given on the sildes.
+                </p>
+            </li>
+
+            <!--Slide 3-->
+            <hr>
+            <li>
+                <h2>Slide 3</h2>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide3.JPG" width="1000px"/>
+                <p>
+                    The simplified form of the boundary layer equation for the flat plate case is given in the slide. This equation is still a PDE. We have tried finding the self similar variables for simplifing the boundary layer equation. And therefore the variable \(\eta\) is only, what flow is depending on.
+                    We assume that <b>g and f are the function of \(\eta\) only.</b>.
+                    <br>And if that assumption is made, then the boundary layer equation will further simplify.
+                </p>
+                <p>
+                    You have the x momentum equation given above. Substitute the expression of f and g (whihc are now function of \(\eta\) only) in the above equation and see it by yourself what it changes to.
+                </p>
+                <p>
+                    The energy equation is also, simplified.
+                    Looking at the eqaution we see that both the equations are only function of \(\eta\). And they are no longer a partial differential equation.
+                </p>
+                <p>
+                    Since the equation itself doesn't depend on \(\zee\). Therefore the solution also will not be a function of \(\zee\), and this would mean that solution will be independent of \(\zee\) thus self similar.
+                </p>
+                <p>
+                    <b>B.L Qqn-self similar</b> is the governing equation of compressible boundary layer flow over a flat plate.<br>
+                    Also appearing in the equation is the ratio of \(\rho\) and \(\meu\), which is \(\text{C}\), and prandlt number \(P_r\). These are functions of \(\eta\).
+                    And using our assumption we could again see that they too are functions of \(\eta\) only.
+                    Which means that f and g will vary within the boundary layer, but along the boundary layer, they won't change, in the \(eta\) VS \(\delta\).
+                </p>
+            </li>
+
+            <!--Slide 4-->
+            <hr>
+            <li>
+                <h2>Slide 4</h2>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide4.JPG" width="1000px" alt="slide 4"/>
+                <p>
+                    The governing equation along with the boundary condition could be solved using any mathod like one being <a href="" target="_blank">Runga Kutta Method</a>. I have studied this method for the first time when learning finite elment method, link to which is provided above.
+                </p>
+                <p>
+                    Look at the governing equation. The x component of momentum equation is third order in \(f\), while the energy eqaution is second order in \(f\). And therefore we would need to have five boudanry condition to solve the governing equation (three for f and two for g). 
+                    We already have three boundary equation which we have seen in the previous lecture. Link to that is, <a href="" target="_blank">Here</a>. This condition was \(f(\eta)\), \(\dot{f}(\eta)\), and \(\dot{g}(0)\) at wall (\(\eta = 0\)) is equal to zero.
+                    And the task is to find the boundary condition on \(\ddot{f}(0)\), and \(\dot{g}(0)\).
+                    <br>
+                    So now we will assume the values of \(\ddot{f}(0)\), and \(\dot{g}(0)\) and try solving for the solution (f,g)
+                </p>
+                <h3>Shooting Mehtod</h3>
+                <p>
+                    <ol>
+                        <li>Assume initial values for <code>f''</code> and <code>g'</code>, typically between 0.5 and 1.</li>
+                        <li>Numerically integrate the governing equations (G.E.) over a large range of <code>&#x03B7;</code> (eta), that is to the edge of the boundary layer. At the edge of the boudary layer \(\dot_{f}(\eta)\), and \({g}(0)\), must converge to some constant value.
+                        Recall f prime is u be ue, and g is h by h_e. Therfore upon intergation is these values reaches constant, then we have reached the edge of the boundary layer.</li>
+                        <li>Check if <code>f'(&#x03B7;)</code> and <code>g(&#x03B7;)</code> approach 1 as <code>&#x03B7;</code> becomes large.</li>
+                        <li>If they approach 1, the solution is complete; if not, adjust the guesses for <code>f''</code> and <code>g'</code> and repeat from step 1.</li>
+                    </ol>
+                    Now, I get it that assuming a new guess value of f and g is not easy since we could increase of decrease the values. <span style="color: red;">I will take a look at it later.</span>
+                </p>
+                <p>
+                    Once the solution is converged for the assumed value of \(ddot_{f}(\eta)\), and \(\dot_{g}(\eta)\), we could find the <b>Skin Friction</b>, and <b>Heat Transfer</b> through the wall.<br>
+                    And we are going to get this by following apprach (recall from the previous slide)<br>
+                    <img src="../Lecture 11/Slide13.jpg" width="500px"/><br>
+                    Notice that skin friction could be found using the value of f double prime at the wall, which in this case of flat plate won't even be function of \(\zee\).
+                </p>
+                    <p>
+                    In essence, this method is a shooting method where you guess unknown initial conditions and use numerical integration to see if the solution meets the desired boundary conditions at infinity (or a large value of η). If not, you revise your guesses and try again until you find the right initial conditions that satisfy the boundary conditions at infinity.
+                </p>
+                <p>
+                    This approach solves the nonlinear boundary value problem by turning it into an initial value problem with iterative correction of guesses. It is common in boundary layer similarity solutions such as the Blasius equation.
+                </p>
+            </li>
+
+            <!--Slide 5-->
+            <li>
+                <h3>Slide 5</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide5.JPG" width="1000px" alt="slide 5"/>
+                <p>
+                    In the last lecture the expression for \(c_f\) was derived. And in general they both depend on the \(\eta\) and \(\delta\), but in our case of flat plate, we know that \(C_f\) is constant. 
+                    And therefore \(\delta\) could be written as shown. Now we substite the value of \(\delta\) in the expression of \(C_f\).
+                    <br>Also in above, we could see that \(\delta\) doesnt have to be a variable on which f depends.
+                    
+                </p>
+                <p>
+                    This expression could be further simplified to a form involving <b>Reynold's Number \(Re_x\)</b>.
+                    We see that the skin friction is inversly proportional to Reynold's number.<br>
+                    <span style="color: red;">Fucking remember this!</span>. Note the formula of reynold's number and fucking derivation.
+                </p>
+                <p>
+                    <b>For the gases, vicocity is function of temperature only</b>. And if considering exponential variation, then the viscocity variation could be written as given at the right.
+                    Also considering perfect gases, we could see that the density could be written as ratio of temperature.
+                    Substituting everything in the governing equation, we get a simplified expression of skin coefficient.
+                </p>
+                <p>
+                    <b>And remember that we could directly calculate the value of skin friction from the f double prime that was obtained from boundayr layer solution.</b>
+                    And with this expression of skin friction coefficient, we could calculate the skin frictions.
+                </p>
+            </li>
+
+            <!--Silde 6-->
+            <li>
+                <h3>Slide 6</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide6.JPG" width="1000px" alt="Slide 6"/>
+                <p>
+                    Notice the second equation in the section of govenring equation. We see that in this second equation, double prime f is a function of prandlt number (simply because it appears in the equation). Also another term appearing in the equation is \(\frac{u_e^2}{h_e}\). 
+                </p>
+                <p>
+                    For the case of a calorifically perfect gas, \(\frac{u_e^2}{h_e}\) could be expressed as function of \(\gamma\) and \(\text{M_e}\). And this is shown in the third line of the silde.
+                </p>
+                <p>
+                    So clearly, this value of double prime f is the function of mach number and gamma from the latter argument and is the function of prandlt number from the first argument.<br>
+                    It is said that from boundary condition we will see that this value (f''(0)) wil depend on ratio of wall temperature and boundary layer edge temperature.
+                </p>
+                <p>
+                    In the simplified form using the understanding from the above discussion, we could express \(C_f\) to be the function of (as shown). And let us now compare this to skin friction of incompressible case. The only difference is that here the constant gets replaced my a paramter whcih depends on many values (\(\text{F}(M_e,Pr,\gamma,\frac{T_w}{T_e}))).<br>
+                    <b>So after calculating the value of \(\text{f}\) double prime we could get the skin coefficent of compressible case, just that it will now depend on many other paramters and will not just be constant.
+                    </b>
+                </p>
+            </li>
+
+            <!--Slide 7-->
+            <li>
+                <h3>Slide 7</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide7.JPG" width="1000px"/>
+                <p>
+                    The first expression shows the heat transfer coefficent that was obtained in last lecture. 
+                    <ul>
+                        <li>We could substitute the value of \(\zee\) into the equation, get what's written in the second line.</li>
+                        <li>For the case of calorifically perfect gas, enthaply \(\text{h}\) could be written as \(C_p \times T\).</li>
+                        <li>Also in the second line there is ratio of thermal conductivity (\(k_w\)) and \(C_{pw}\) appearing. And we could use the definition of prandlt number \(Pr = \frac{C_p \times \meu_w}{k_w}\) and some how get it into this equation.</li>
+                        Now doing so there will be a extra \(\meu_w\) in the expression of \(\text{C_H}\).
+                    </ul>
+                </p>
+                <p>
+                    In the third line we see that there is an extra \(\meuy_w\) sitting. And we also know that ratio of density and viscocity could be epxressed in terms of temperature ratio for calorifically perfect gas. Using that we have finally obtained the expression for \(C_H\).
+                </p>
+                <p>
+                    Now we compare it with the incompressible. And just like skin friction there are may dependency in the case of compressible for heat transfer coefficient compared to incompressible flow.
+                </p>
+            </li>
+
+            <!--Slide 8-->
+            <li>
+                <h3>Slide 8</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide8.JPG" width="1000px"/>
+                <details>
+                    <summary>What is Reynold's Analogy?</summary>
+                    <p>
+                        Reynolds' analogy is a classical concept in fluid mechanics that establishes a relationship between momentum transfer (fluid friction) and heat transfer within a boundary layer or turbulent flow.
+                    </p>
+                    <p>
+                        The analogy states that when the Prandtl number (Pr) is close to 1 (typical for gases), the transport rates of momentum and heat due to turbulence are nearly the same.
+                    </p>
+                    <p>
+                        Reynolds' analogy enables the prediction of heat transfer rates from measured or calculated values of friction (momentum transfer), which is highly useful in engineering analyses.
+                    </p>
+                </details>
+                Ther relation could be seen in above for compresible and incompressible cases. No staright forward methods to find the values of these ratio for imcompressible and compresible flows.
+            </li>
+
+            <!--Slide 9-->
+            <li>
+                <h3>Slide 9</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide9.JPG" width="1000px"/>
+                <p>Van Dreist solved gthe equation for wide range of problems. First we will take a look at the Velocity Profiles.</p>
+                <p>
+                    <ul>
+                        <li>
+                            <b>At any given location on the plate and at any given reynold's number, the increase in mach number (0-20), the boundary layer thickness increases. </b> This is an important aspect in the hypersonic flow that with increase in mach number the boundary layer thickness increases.
+                        </li>
+                        <li>
+                            <b>Looking at the temperature profile, with increase in mach number the temperature increases at a given x location and at a given reynold's number.</b>. Also to be noted here is there is no gradient of temperature at the wall. And this is because we ahve considered insulated plate (so the heta flux is zero).
+                        </li>
+                    </ul>
+                </p>
+            </li>
+
+            <!--Slide 10-->
+            <li>
+                <h3>Silde 10</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide10.JPG" width="1000px"/>
+                <p>
+                    Now we look at the case where plate has a cold wall temperature (no insulated, where haet transfer is going to occur).
+                    <ul>
+                        <li>
+                            <b>In the velocity profile, We see that at any given location for  a given reynold's number the boundary layer thickness increases with mach number.</b>
+                        </li>
+                        <li>
+                            Due to viscous dissipation the value of temperature will increases with increaes in the Mach number. And this could seen in general.
+                        </li>
+                        <li>
+                            <b>In the case of temperature profile, again with the increase in Mach Number, the temperature value increases.</b> Whats needs to be focused here is that at the wall there exist a temperature gradient. Also we see that first the temperature peaks at some value and the n it again approaches the wall temperature.<br>
+                            <b>This peak value of temperature gives us the estimation of viscous dissipation happening in the boundary layer.</b> We also see that effect of viscous dissipation increases with increase in mach number (as the peaks fo temperature for high mach number are higher than that of lower mach number).
+                        </li>
+                    </ul>
+                </p>
+            </li>
+
+            <!--Silde 11-->
+            <li>
+                <h3>Slide 11</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide11.JPG" width="1000px"/>
+                <p>
+                    Comparing the velocity profile for insulated and cold wall flat plate we see that the<b> thickness of boundary layer is higher in the case of insulated flat plate.</b> This clearly explains that effect of cold wall is to reduce the thickness of boundary layer. 
+                </p>
+                <p>
+                    The reason could be explained, when we have a look at temperature profile for cold wall and insulated flat plate.
+                </p>
+            </li>
+
+            <!--Silde 12-->
+            <li>
+                <h3>Silde 12</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide12.JPG" width="1000px"/>
+                <p>
+                    Comparing the temperature profile we see that temp is higher in insulated flat plate (ranging from 0 to 80), however it is lower in the case of Cold wall case where it ranges from (0-40).
+                </p>
+                <p>
+                    For a cold wall plate (temp less than adiabatic temp), density of the fluid will be larger at the wall for cold wall plate (due to lower temp). And if the density is larger it means the given mass flow rate could be accomodated with smaller area, and this would mean lower thickness of boundary layer. And hence boundary layer thickness of cold walled flat plate is lower than that of insulated flat plate.
+                </p>
+            </li>
+
+            <!--Silde 13-->
+            <li>
+                <h3>Silde 13</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide13.JPG" width="1000px"/>
+                <p>
+                    Given above is variation of skin friction with mach number, for a flat plate. Both insulated flat plate and non insulated flat plate is considered. 
+                </p>
+                <p>
+                    We see that for both the kind of flat plate <b>the value of skin friction decreases with increase in mach number.</b>
+                </p>
+                <p>
+                    <b>
+                        For insulated flat plate we see that value of skin friction drops to almost half of it's value. Also, decrease in skin friction coefficient doesn't mean that the skin friction will also decrease with increasing mach number. Infact shear stress at wall is proportional to square of Mach Number.
+                    </b>
+                </p>
+                <p>
+                    <b>From the graph of Non Insulated plate we see that here the effect of skin friction is to increase the wall temperature.</b>
+                    For a colder wall, density at wall will be larger and thus thickness of boundary layer will be small. And if thickness is small the velocity gradient will be larger, and this would mean larger skin friction.
+                </p>
+                <p>
+                    For the case if insulated plate where the mach number approachs zero (Incompressible) the value of skin co-efficient will be a constant value 0.664.
+                </p>
+            </li>
+
+            <!--Slide 14-->
+            <li>
+                <h3>Slide 14</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide14.JPG" width="1000px"/>
+                <p>
+                    The variation of heat transfer coeffient is plotted with mach number in the above graph. We see that trends obtained as similar to ski friction. And this could be understood using the Reynold's analogy that we have seen previously.
+                </p>
+            </li>
+
+            <!--Slide 15-->
+            <li>
+                <h3>Summary</h3>
+                <img src="./Lecture-12-Audio_05644cfa-7bd7-4525-8b7f-480be43f682f/Slide15.JPG" width="1000px"/>
+                <p>
+                    In this lecture we have seen that boundary layer equation for flat plate is <b>Self similar</b>. And then we have seen the relation between mach number, different temp boundary condition and Boundary layer thickness.
+                </p>
+                <p>
+                    
+                </p>
+            </li>
+        </ul>
+          <a href="./index.html">Top of the Page</a>  
+    </div>
+</body>
+</html>
