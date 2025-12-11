@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arush's Hypersonics Notes (AE720)</title>
+</head>
+<body>
+    <a href="../index.html">Go Back</a>
+    <div class="heading">
+        <h1>
+            Lecture 6: Approximate Methods – Hypersonic Small Disturbance Equation
+        </h1>
+    </div>
+    <p>We have derived Euler equation and it could be appiled to any knid of body. But if we are interested in hypersonic body, whish is slender, and offers high lift ot drag ratio, then the derived euler equatio could be approximated to another form called <b>Hypersonic Small Disturbance Eqaution</b> </p>
+    <div class="slide silde_2">
+        <h2><b>Slide 1</b></h2>
+        <img src="./Slide2.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                   Consider a uniform hypoersonic flow over a two dimensional slender body. The velocity at any point  could be decomposed into x and y velocity.
+                   If we consider the free stream, the flow is parallel to x, anmd thus v_y = 0, and downstream it undergoes deflection and then u and v will be non zero. 
+                    Consider the x direction velocity to be equal to \(V_{infity}\ + U'), and y direction velocity be \(V').
+                </p>
+            </li>
+            <li>
+                <p>
+                    Note that the velocity will be tangential to the syurfac esince the flow is invicid.
+                    Here we have introduced new velocity variables and they are \(U'\) and \(V'\). These are called <b>Pertubation Velocities</b>.
+                    Since we are considering the body to be slender, we are considering the pertubation velocities to be very small compared to free stream velocitites.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="slide slide_3">
+        <h2><b>Silde 3</b></h2>
+        <img src="./Slide3.jpg" height="500px">
+        <ul>
+            <li>
+                <p>
+                    In order to study the nature of pertubation, let us consider velocity at some position the surface of body.
+                    Since we already know from the boundary condition that the flow will be tangential to the surface of the body, we could write the second equation on the above slide.
+                    
+                </p>
+            </li>
+            <li>
+                <p>
+                    Now from the geometry we could say that tangnet to any point on the srface will be proportianl to \(D/l\). And this is called <b>Slenderness ratio</b>.
+                    Using these two ratios, we can write \(\frac{v'}{V_{infyt}+u'} = o(\tao) = \frac{dy}{dx}\).
+                    And thne using the asusmption that the pertubation velocity is very small due to slender body assusmption, we could further modify the eqaution to \(\frac{v'}{V_{infyt}} = o(\tao) = \frac{dy}{dx}\)
+                </p>
+            </li>
+            <li>
+                <p>
+                    Now let usa define \(a_{infty}\) to be free stream speed of sound. and using this ex[pression we cpould find as shown above.
+                    Finally we have arrived at the final eqaution.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Now this term \(M_{infty}\tao\) is called <b>Hypersonic Similarity Parameter</b>. and this ratio that is \(\frac{v'}{a_{infty}}\) will give us the strenght of the distrubance that might be occuring inside the hypersonic flow.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_4">
+        <h2><b>Silde 4</b></h2>
+        <img src="./Slide4.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    In the euler equation we could replace the velcities with the pertubation velocities as shown above.
+                    Once we have done it, we non-dimensionalise these equations.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_5">
+        <h2><b>Silde 5</b></h2>
+        <img src="./Slide5.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    We knwo that for slender bkody at hypersonic, the flow delfection angle an d shock wave angle will be <small></small>
+                    Therfore we can write the first line.
+                </p>
+            </li>
+            <li>
+                <p>
+                    If we recall the pressure ratio for high mach number region, it is written as line 2. And it is derived from the oblique shock theory.
+                    and from previous discussion we know the pressure ratio is of order pf magnitude given. And hence the non dimensioanmlise pressure (which as order of magnitude equal to one) 
+                </p>
+            </li>
+            <li>
+                <p>
+                    For the case of air, \(\gamma = 1.4\) which will already make the ratio of dnesity above at high mach number equal to one. And thus this is could be used as non dimensional density as it is.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_6">
+        <h2><b>Slide 6</b></h2>
+        <img src="./Slide6.jpg" height="500px">
+        <ul>
+            <li>
+                <p>
+                    The velocity ratio at high ,ach number is given by the first line.
+                    Now let us define \(\deltau = V_{infty} - u_2\). And this is the change in x-velocity across shock wave.
+                    Ratio \(\frac{\deltau}{V_{infty}}\) is given by the formual above. And using the first line we could simplfy it to this. and this is proportioanl to slenderness ratio squared.
+                    So just non dimensionalising with \(V_{infty}\) wont do the job, we will also need to multiply the denomiantor by \(\tao^2\) and then the x velocity could be non-dimensionalised.  
+                    And similarly in y direction. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    We see that that the velcoity change in x direction is much smaller than velocity change in y dircetion, and since the y direction velocity was zero intially, y direction velocity will almost always be close to zero.
+                    This is beacuse for a slender body the slenderness ratio will be very small. So delta u is very small, and delta v is just small. And this means in hypersonic flows the flow is mostly domianted by x velocity.
+
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_7">
+        <h2><b>Slide 7</b></h2>
+        <img src="./Slide7.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    Based on the above assumption we can define the non dimensiaonlised variable that could be used in the governing eqaution.
+                    Since the x direction lenght is much larger due to geometry, so y an dz is also dimensioanlised with \(\tao\)
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="slide silde_8">
+        <h2><b>Silde 8</b></h2>
+        <img src="./Slide8.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    The euler eqaution has now changed to this. The thing to be noted is due to very small values of \(\tao\) it could eb ignored when added to one.
+                    And this finally completes our Formaulation of governing eqaution.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_9">
+        <h2><b>Silde 9</b></h2>
+        <img src="./Slide9.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    Now we ahve finally arrived at the final governing eqaution exclusively for hypersonic flows, with slender body,a nd they are called small pertubation hypersonic euler equation.
+                    These eqautions are only valid for slender bodies since we have ignored the term \(\tao^2\).
+                </p>
+            </li>
+            <li>
+                <p>
+                    The pertubation velocity \(u') occurs only in the x momentum and it is decoupled from the eqaution. And so we will first solve the opther four eqautions, calculating p,v,w,rho, and then we will solve for u.
+                    This again staes the fact that change in velocity in x is very small compared to that of y and z.
+                    Even after applying the small pertubation we still got non linear eqaution. And this states the fact that hypersonic flows are indeed non linear.
+                </p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
