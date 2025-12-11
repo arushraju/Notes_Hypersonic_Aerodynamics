@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <title>Arush's Hypersonic Notes</title>
+</head>
+<body>
+    <a href="../index.html">Go Back</a>
+    <div class="heading">
+        <h1>Lecture 5 : Approximate Methods - Mach Number Independence Principle</h1>
+    </div>
+    <p>
+        We have discussed about <b>local surface inclination methods</b>. If we are interested to know whats happening to the entire flow feild (not just around the body), the we will have to solve some governign equation around entire doiam of the flow field.
+        And these eqaution could be obtained froim making some approximation and assumption. Hypersonic computation wasnt common earlier, and expreiemnt were expensive, so analytical method were the only way to anaysis hypersonic flows.
+    </p>
+    
+    <div class="slide slide_2"> 
+        <h3><b>Governing equations</b></h3>
+        <img src="./Slide2.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    Consider a hypersonic flow, over any geometry configuration. If we wanted to know the solution, we will have to solve a system of concervation law equation.
+                    Concervation of mass, energy, and newton's second law. Here we are considering invicid flow with no body forces and no heat additon, so isentropic flows.
+                    With this assumption we will, be able to approximate the solution.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The energy eqaution is written  in terms of entropy. Since w eare considering invicid flow with no heat additon, the energy eqaution could be very concisly wirtten as \(\frac{Ds}{Dt} = 0\).
+                    If the entproy is constant then from the isentropic relation we can also write the \(\frac{P}{\rho^{\gamma}} = Constant\). And this could be substitued in place of entropy \(S\), and could be written.
+                    These set of equations are called <b>Euler Equation</b>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Once the boundarey conditions are known, we could use these eqaution for solving the flow problem.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="slide silde_3">
+        <h2><b>Mach Number Independence</b></h2>
+        <img src="./Slide3.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    When discussing about the Newtonian flows, we have talked about this plot. Where in we have seen how good is newtonian method for calculating the Cone and Wedge under hypersonic flow compared to modified newtonian method.
+                    And in that we have also mentioned that the value of coeffienct of pressure kind of saturates at some \(C_p\) at high mach number in case of modified Newtonian law.
+                </p>
+            </li>
+            <li>
+                <p>
+                    With increase in amch numbner, the \(C_p\) decreases. Beyond certain mach number the \(C_p\) value approaches platue and after that \(C_p\) becomes independent of mach number.
+                    This is what we call <b>Mach number Independence</b>. Mach wave patterns and Shcok waves shapes, and many other paramter alomoist becomes independent of mach number. And this happens in case of high mach numbers.
+                </p>
+            </li>
+            <li>
+                <p>
+                    However the newtonian model will always remain constant.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_4">
+        <h2><b>Non dimensionalising Governing Equation</b></h2>
+        <img src="./Slide4.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    Let us begin by non dimensioanlising the governig eqaution. The reference factor is shown above.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_5">
+        <h2><b>Non Dimensionalizing Governing equation</b></h2>
+        <img src="./Slide5.jpg" height="500px">
+        <ul>
+            <li>
+                <p>
+                    Upon Non-dimensionalising the governing equation with the given non-dimensioanal variables, we would get the above equations. They will get transformed.
+                    And the boundary conditon is no penetration condition. \(n_x,n_y,n_z\) are just components of normal vector to the surface of body (Directional Cosines in X,Y and Z direction).
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="slide silde_6">
+        <h2><b>Oblique Shock Relations</b></h2>
+        <img src="./Slide6.jpg" height="500px">
+        <ul>
+            <li>
+                <p>
+                    For an external flow over a hypersonic body, the region of interest to us is region of shock layer. The shock layer in the baove case is 
+                    boundaed by body surface, and we know the B.C at that edge. Which is no penetration condition. However the boundary condition at the other side of the shock layer
+                    is given by the oblique shock relations, which are listed out here.
+                </p>
+            </li>
+            <li>
+                <p>
+                    And we see that LHS are already in appropriate non dimensional form. (Excpet for the case of pressure). So to make the pressure also in the appropriate non dimensioanl form, we do the folowing:
+                    We use the state law of ags, as shown in the bottom part of the image, and we could see that \(p_{infty}) could be written in terms of \(M_{infty}\). 
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_7">
+        <h2><b>Silde 7</b></h2>
+        <img src="./Slide7.jpg" height="500px"/>
+        <p>
+            After substituing the above mentioed pressure in the oblique shock relation we have obtained the following results.
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Applying the high mach number conditions on the above realtion, we will end up getting this relations as shown at the right side of the slides
+                </p>
+            </li>
+            <li>
+                <p>
+                    Now we have the boundary conditon at the surface and boundary conditon at the shock wave and governign eqaution all in non dimensional form. Now using thises things we could get the solution of the flow feild inside the shock layer.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_8">
+        <h2><b>Silde 8</b></h2>
+        <img src="./Slide8.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    We see that the mach number is occuring at the shock wave boundary conditions only. and this means the solution of these eqaution is mach number dependent.
+                    And this was the case for supersonic flows.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="silde silde_9">
+        <h2><b>Silde 9</b></h2>
+        <img src="./Slide9.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    On the other hand, let us apply the high mach numnber at the boundary condition now, and we see that none of the eqaution is dependent on mach number. And this meansthe solution of hypersonic flow is independent of mach number.
+                    Solution is mach number independent. So any quantity that is derived from these solution using pressure, velocity will be mach number independent (like \(C_p\)).
+                    This brings us to the start of the lectures.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="slide silde_10">
+        <h2><b>Slide 10</b></h2>
+        <img src="./Slide10.jpg" height="500px"/>
+        <ul>
+            <li>
+                <p>
+                    The variation of Coefficient of Drag is plotted with various Mach Number. We see that with increase in mach number, the drag coefficient acheives a platue. and this means the mach number independence is acheived. 
+                    However the mach number independence is acheived much earlier in sphere compared to cone.
+                    This was some what expected since in the case of blunt bodies, the value of \(\beta\) is larger. And therefore mach number independence is acheived at lower mach number. And opposite is the case with slender bodies.
+
+                </p>
+            </li>
+            <li>
+                <p>
+                    Note that it is the non dimensional quanties that are becoming mach number independent, and not the quantities itself. With increase in amch number the pressure also approaches infinity, even thougb \(c_p\) becomes constant.
+                </p>
+            </li>
+        </ul>
+    </div>
+    
+</body>
+</html>
