@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contianer">
+        <a href="../index.html">Go Back</a>
+        <h1>Lecture 13</h1>
+        <ul>
+            <!--Slide 1-->
+            <li>
+                <h2>Slide 1</h2>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide1.JPG" width="1000px"/>
+                <p>
+                    We will discuss seld similar solution that could be obtained in the stagnation region.
+                </p>
+            </li>
+
+            <!--Silde 2-->
+            <li>
+                <h2>Slide 2</h2>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide2.JPG" width="1000px"/>
+                <p>
+                    Consider a 2D blunt cylindrical body of infinite span. At the stagnation region of the body,boundary layer thickness if finite. As before X is the distance along the surface of the body, and u_e is the velocity of the fluid at the edge of boundary layer in x direction. Here R is the local raduis of curvature in the stagnation region.
+                </p>
+                <p>
+                    We have the X directional Momentum and Energy equation for the Boundary Layer. And just like in the flat plate case we assume <b>f, and g to be function of \(\eta\) only.</b> If so, the the equation will simplify to that which is given at the bottom of slide.
+                </p>
+                <p>
+                    Lookign at the expression we could clearly see that these equations are having \(\zee\) dependency, and therfore the solutions are not self similar. <span style="color: red;">This could be thought to be one of cases where self similar solution odesnt exist. So it's not always the case that self-similar solution exist.</span>
+                </p>
+            </li>
+
+            <!--Silde 3-->
+            <li>
+                <h3>Slide 3</h3>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide3.JPG" width="1000px"/>
+                <p>
+                    At the stagnation region the velocity at outer edge will be very small (ideally, we have seen from incompressible theory that it is zero). Also the enthalpy will be equal to stagnation enthalpy (Total Enthalphy). Therefore the the ration \(\frac{u_e^2}{h_e}\) will be nearly zero.
+                </p>
+                <p>
+                    Rememebr that in the last lecture we ahve seen that this term appers in the governing equation. (Sse the previous slide for reference). Since the velocity of flow is very small we could consider nearly flow to be nearly incompressible.
+                </p>
+                <p>
+                    So now we could use the results of incompressilbe fluid and this would give us as shown at top right. We have an expresison for \(U_e\) and this could substitued in that of \(\zee\).
+                </p>
+                <p>
+                    Also there appears a term \(\frac{\dell U_e}{\dell \zee}\), in the governing equation which could be expressed as shown in mid left of the slide.<br>
+                    After further simpolification we could obtain the expression for \(\frac{\dell U_e}{\dell \zee}\). Then we used the expression for u_e in the stagnationregion in incompressilbe flow and substituted it in this expression for \(\frac{\dell U_e}{\dell \zee}\) to get expression for \({\frac{\dell U_e}{\dell \zee}}_s\).
+                </p>
+            </li>
+            
+            <!--silde 4-->
+            <li>
+                <h3>Slide 4</h3>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide4.JPG" width="1000px"/>
+                <p>
+                    Now we have the expression for \(U_e\), \(\zee\), \(\frac{\dell U_e}{\dell \zee}\), and the velocity \(U_e\) in the stagnation region. With these expression let's take a look at the x component of the momentum and energy equation.
+                </p>
+                <p>
+                    The momentum and energy eqaution could be further simplified.
+                </p>
+            </li>
+
+            <!--Slide 5-->
+            <li>
+                <h3>Slide 5</h3>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide5.JPG" width="1000px"/>
+                <p>
+                    The density ration that appears in the momemtum equation could be expressed as shown above.<br>
+                    Here we have assume that pressure acting at the outer surface of boundary layer is equal to that on the surface. Thats is we have not considerd any noraml gradient in pressure.
+                </p>
+                <p>
+                    Upon these considerations we see that solution of the boundary layer equation to be as shown. And we see that there is no \(\zee\) dependency in this equation. Therefore the solution of compressible stagnation point case will be self similar. Solving this equation will result in self similar solution. And this requires Numerical Techniques.
+                </p>
+            </li>
+
+            <!--Slide 6-->
+            <li>
+                <h3>Silde 6</h3>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide6.JPG" width="100px"/>
+                <p>
+                    Till now we have used the transformation that are cartesian. But for the axi-symmetric, the trnasformation has to be cylindrical, and this is given at the top of the slide.
+                </p>
+                <p>
+                    After solving the governign equations, we could obtain the heat transfer rate. We are interested to know the heat transfer rate because, in stagnation region temperature will be higher, specially in the case of hypersnoic flow. (exmaple the re entry vehicle).
+                </p>
+                <p>
+                    The solutionn for different axi symmetrical body is given below. For the case of Cylinder, and Sphere. We see that both of them are same except for the coefficents. The first one, which is cylinder is 0.57, and the next one which is sphere is 0.763. So this says that<b>Heat transfer rate is higher in the case of sphere when compared to a cylinder for the same given free stream condition</b>.
+                </p>
+                <p>
+                    And this is due to famous <b>Three-dimensional relieving effect</b>. Because of this Thickness of boundary layer will be higher for sphere when compared to the thckness for the case of cylinder.<br>
+                    And if the thickness is smaller, temperature gradient wil be larger. And thats the reaosn for higher Heat transfer rate for sphere compared to cylinder.
+                </p>
+                <p>
+                    Another thing to note here is that velocity gradient appears in both the expression of cylinder and sphere.
+                </p>
+            </li>
+
+            <!--Slide 7-->
+            <li>
+                <h3>Slide 7</h3>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide7.JPG" width="1000px"/>
+                <p>
+                    At the outer edge of the bounday layer when we apply the euler equation, we get the relation between pressure and velocity. And this equation could be differentiated with x. And now we ahve the expression for velocity gradient dU_e by dx. But this also contains the term of pressure gradient. Now lets try finding an expression for pressure gradient.
+                </p>
+                <p>
+                    Lets assume, Newtonian Pressure Distribution. Here \(\theta\) is the angle between tangent to the body surface and free stream velocity. Now let us define \(\phi\) to be normal to the body surface and free stream. (\(\theta + \phi = 90\)).
+                </p>
+                <p>
+                    Using the definition of \(C_p\), we could get an expression for \(p_e\). And once we have a expression for p_e, it could be differntialted to get the poressure gradient. And then this could be used to get the velocity gradient.
+                </p>
+                <p>
+                    And now we have an expression for velocity gradient in terms of angle and dynamic pressure. And this is  ageneral result that applies to all points on the body surface.
+                </p>
+            </li>
+
+            <!--Slide 8-->
+            <li>
+                <h3>Slide 8</h3>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide8.JPG" width="1000px"/>
+                <p>
+                    Now in the stagnation region consider a location location which is at a small distance dx, from it. And therefore the angle it makes is \(\dell \phi\), which will be small. And from simple geometry we could say, \(\frac{\d \phi}{dx}\) will be \(\frac{1}{R}\).
+                </p>
+                <p>
+                    And this could be put in the expression of velocity gradient. And then we see velocity graident is inversly proportional to nose radius R. And then we know that heat transfer rate equation is directly proportinal to square root of gradient of velocity. And this states that higher nose radius will result is lower heat transfer rate. And this is the reason that hypersonic vehicles have blunt nose.
+                </p>
+            </li>
+
+            <!--Slide 9-->
+            <li>
+                <h3>Slide 9</h3>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide9.JPG" width="1000px"/>
+                <p>
+                    From the graph we could see that the heat transfer rate is inversely proportional to heat transfer rate.
+                </p>
+            </li>
+
+            <!--Slide 10-->
+            <li>
+                <h3>Slide 10</h3>
+                <img src="./Lecture-13-Audio_1594d001-725b-4bf0-8b19-d2924f72c53e/Slide10.JPG" width="1000px"/>
+                <p>Done Fucking!</p>
+            </li>
+        </ul>
+        <a href="./index.html">Top of the Page</a>
+    </div>
+</body>
+</html>
