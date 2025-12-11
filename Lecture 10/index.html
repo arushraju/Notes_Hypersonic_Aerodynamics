@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arush's Hypersonic Flows (Lecture 10)</title>
+    <style>
+        .imp{color: red;}
+    </style>
+</head>
+<body>
+    <!--Slide 1-->
+    <a href="../index.html">Go Back</a>
+    <div class="slide">
+        <h1>Reduction of Navier Strokes Equation to Boundary Layer Equation</h1>
+        <img src="./Lecture-10/Slide1.PNG" width="500px"/><br>
+        <p>
+            And this is going to be done using the <b>Order of Magnitude Analysis</b>.
+        </p>
+    </div>
+        
+    
+    <!--Slide 2-->
+    <hr>
+    <div class="slide">
+        <h2>Non-Dimensionalizing Continuity Equation</h2>
+        <img src="./Lecture-10/Slide2.PNG" width="500px"/>
+        <p>
+            The most important assumption made in derivation of boundary layer equation is that <span style="font-weight: 900; color: red;">Thickness of boundary layer (\(\delta\)) is very small compared to Characteristic length (c)</span>. And this assumtion is valid in relaity also.<br>
+            Now let do the order of magnitude analysis in governing equation.
+        </p>
+        <p>
+            When proving the boundary layer equations, variables such as the streamwise distance, velocities, and the vertical coordinate are converted to nondimensional forms by dividing them by characteristic scales. For example, x which measures distance along the flow direction, is divided by a characteristic length such as the length of the plate or body under consideration. This results in a nondimensional horizontal coordinate that ranges from zero to one or beyond, depending on how far along the plate you measure. Similarly, the velocity component along this streamwise direction is made nondimensional by dividing by the free stream velocity, which is the speed of the fluid far upstream of the surface
+        </p>
+        <p>
+            The vertical coordinate, which measures the distance perpendicular to the surface, is treated differently. Because the boundary layer is usually very thin compared to the characteristic length, it is more meaningful to scale the vertical variable by the boundary layer thickness at that position along the plate rather than by the total plate length. This thickness itself grows with downstream distance and depends on Reynolds number and flow conditions. This choice of scaling for the vertical coordinate highlights the thinness of the velocity profile region next to the wall where viscous effects are significant.
+        </p>
+        <p>
+            Now the way I understand this is that, non dimensionalising will kind of expand (zoom) the boundary layer profile. And we might zoom the X, and Y cordinate differently since the thickness would be different in both the cordinate (which it is). So if the thckness of boundary layer is thin, I would divide it with smaller factor to zoom it much more than I will do it in X direction. And that's it. 
+        </p>
+        <p>
+            Note that since the value of X velocity is going from 0 to U at the edge of boundary layer we know whats the characteristic velocity to non dimensioanlsie it. But we know that Y velocity is zero at the surface, and also at the edge of boundary layer. So we don't knwo what happens to it's value (or order of magnitude) inside the boundary layer. And hence we haven't non dimensionalised it.<br> But we anticipate it's order of magnitude from the continuity equation with the knowledge that boundary layer thickness is very small compared to characteristic lenght.
+        </p>
+        <p>
+            After we make Non-Dimensionlaize the vairables and then use it in the continutiy equation, we get the following relation that the Y velocity is of the order of the boundary layer thickness to satisfy the continuity equation.
+        </p>
+    </div>
+
+    <!--Slide 3-->
+    <hr>
+    <div class="slide">
+        <h2>X - Momentum Order of Magnitude Analysis</h2>
+        <img src="./Lecture-10/Slide3.PNG" width="500px"/>
+        <p>
+            We are going to do the order of magnitude analysis of each and every term in the x-momentum equation.
+            Lets make one more assumption of the flow. <b>Reynold's number is very large.</b> <div class="imp">Note that reynold's number being very large is an assumption, and it is said experimentally.</div><br>
+            Now with the equation written above after making the assumption about the reynold's number, we see that one term is of the order "dell squared" and one is of the order "one" (in the viscous part). And hence the term <i style="color: red;">partial derivative of y velocity wrt x</i>, could be neglected,
+            and after getting rid of that term in the x momentum equation we are left with simplified x-momentum equation.
+        </p>
+        <details>
+            <summary>Some more insigths into the X momentum Boundary Layer Equation (AI)</summary> 
+            <p>
+            Because the boundary layer thickness is very thin compared to the length of the body, velocity gradients perpendicular to the surface (in the y direction) are much larger than those along the flow (in the x direction). As a result, viscous diffusion terms involving second derivatives with respect to y dominate over those with respect to x. This allows neglecting the viscous term involving the second derivative with respect to x. Furthermore, since the flow is steady and laminar in many cases, time derivatives are also omitted.
+        </p>
+        </details>
+    </div>
+
+    <!--Slide 4-->
+    <hr>
+    <div class="slide">
+        <h2>Y - Momentum order of Maginitude Analysis</h2>
+        <img src="./Lecture-10/Slide4.PNG" width="500px"/>
+        <p>
+            In the slide given above the order of magnitude analysis is written with their order of magnitude.
+            <br><b>Assumption No.3: <div class="imp">We are asuming that the order of magnitude of gamma times the mach number is equal to constant.</div></b>
+            We know that the thickness of the boundary layer is very small. And analysing the Y momentum equation simplifies to pressure gradient normal to the surface is zero. (See it yourself)
+        </p>
+        <p>
+            The y momentum equation in the boundary layer approximation is quite different from the usual full Navier-Stokes y momentum equation. In the boundary layer, the vertical or normal velocity component and variations happen over a very thin distance compared to the streamwise direction. Due to this, the vertical acceleration terms and viscous terms in the y direction become very small and can often be neglected.
+            One key outcome is that the pressure gradient in the y direction within the boundary layer is negligible, meaning the pressure does not change through the thickness of the boundary layer in the y direction. Instead, the pressure within the boundary layer is taken as the same as the pressure in the external inviscid flow, which depends only on the x coordinate.
+        </p>
+    </div>
+
+    <!--Silde 5-->
+    <hr>
+    <div class="slide">
+        <h2>What if the Mach Number is very large?</h2>
+        <p>
+            In the above assumption, while approximating the momentum equation we have assumed that the mach number is small and hence arived at the result that pressure doesnt chnage along the normal. <b>But what if the mach number is large? This is for the first time I will be learning about the boundary layers when the mach number is large.</b> 
+            Now in this case we are assuming the <b>inverse value of mach number times gamma to be of the order thickness of boundary layer</b>. In other words we are assuming that the value of mach number is very large.
+            Now if this assumption is made, then we see that pressure derivative in the y direction is not equal to zero, <b>but is equal to some constant order of magnitude.</b> 
+        </p>
+        <p>
+            With this assumption of inverse of mach number of the order delta, the X momentum equation is given above on the slide.
+            <b>This says that the pressure gradient in the x direction doesnt influece the hypersonic boundary layer</b>, because you see in the eqaution of X momentum, order of magnitude of pressure gradient in x direction is negligible compared to other terms in the x momentum equation.
+        </p>
+        <p>
+            One interesting thing that happened is that the pressure gradient in x direction is now neglected and that in y direction is considered to be of constant order of magnitude. Which is opposite to the case when the flow had the smaller mach number.
+        </p>
+        <h3>Some Insights</h3>
+        <p>
+            <ul>
+                <li>
+                    At low Mach numbers, the assumption that the pressure gradient in the vertical (normal) direction is negligible holds true because compressibility effects are small. This means the pressure is essentially constant across the boundary layer thickness in the y direction, while pressure changes occur primarily along the flow direction (x direction). Therefore, the classic boundary layer equation includes a significant pressure gradient in x but assumes none in y.
+                </li>
+                <li>
+                    However, at high Mach numbers, especially in hypersonic regimes, compressibility effects become very important. Your point about the inverse Mach number times gamma being of the order of boundary layer thickness reflects the mathematical scaling used in hypersonic boundary layer theory.<u> When Mach number is very large, the vertical pressure gradient cannot be ignored. Instead, it becomes a finite and important quantity that influences flow characteristics such as shock-boundary layer interactions and thermal effects.</u>
+                </li>
+                <li>
+                    In this high Mach number limit, the x momentum equation's pressure gradient term in the flow direction becomes negligible in comparison, meaning that pressure does not vary significantly along the surface within the boundary layer. Conversely, the pressure gradient in the y direction stays relevant and must be accounted for. This reversal of which pressure gradients matter compared to the low Mach number case is fundamental to hypersonic boundary layer analysis and leads to different flow behaviors and solution techniques.
+                </li>
+            </ul>
+        </p>
+    </div>
+
+    <!--Silde 6-->
+    <hr>
+    <div class="slide">
+        <h2></h2>
+        <img src="./Lecture-10/Slide6.PNG" width="500px"/>
+        <p>
+            By doing the order of magnitude analysis together with the assumption that the thickness of boundary layer is very small, and the reynold eqaution is very large, we could arive at specialised equation for boundary layer.<br>
+            These equation are still non linear in nature (similar to the navier strokes equation). 
+            We have six unknowns (u,v,rho,h,T,P). Here note that the pressure is already known from the outer invicid solution (and while coming to this conclusion we ahve used the y momentum equation).<br>
+            So the equation that we have with us are Continuity ,X momentum, and Energy equation and variables being u, v, \(\rho\), T am h. So to be able to solve the system thoroughly we will have to make us of State equation, and Enthalpy equation also (5 equations, 5 unknowns).
+        </p>
+    </div>
+
+    <!--Slide 7-->
+    <hr>
+    <div class="slide">
+        <h2>Boundary Conditon</h2>
+        <img src="./Lecture-10/Slide7.PNG" width="500px"/>
+        <p>
+            Boundary condition for the above equation are discussed here.
+            At the wall, the cordinate of location will be zero (obviously), No slip (u=0,v=0), and temperature could be depending on whether the wall is adiabatic, or heat assigned.
+            And the far feild baoundary condition could be that velocity reaches the free stream velocity, and temperature reaches free stream temperature. (Edge of the boundary layer).
+        </p>
+    </div>
+
+    <!--Slide 8-->
+    <hr>
+    <div class="slide">
+        <h2></h2>
+        <img src="./Lecture-10/Slide8.PNG" width="500px"/>
+        <p>
+            We have obtained the boundary layer equation which could be used for both subsonic and supersonic flow. But we have seen in the case of hypersonic flows case that the <b>pressure graident is significant in y direction compared to in x direction.</b>
+            And due to viscous dissipation there would be chemical reaction occuring in the boundary layer at very high temperature. <b>As a result of which the obtained eqaution for the hypersonic flow, can not be used to solve the flow excatly.</b> We will also have to include the chemical reaction terms in it, and also energy transport terms, to complete it.<br>
+            The above equation gives some what good approximations. 
+        </p>
+    </div>
+
+    <hr>
+    <a href="./index.html">Top of the Page</a>
+</body>
+</html>
