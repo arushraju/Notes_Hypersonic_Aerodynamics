@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arush's Hypersonic Flows (Lecture 9)</title>
+    <style>
+        .imp{color: red;
+        font-weight: 200;}
+    </style>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <a href="../index.html">Go Back</a>
+    <h1>Lecture 9: Viscous Hypersonic Flows</h1>
+    
+    <!--Silde 1-->
+    <img src="./Lecture-9/Slide1.JPG" width="500px"/>
+    <p>
+        <h2>Abstract</h2>
+        <p>
+            In previous lecture we have discussed about invicid hypersonic flows, and that has helped us better understand about the 
+            characteristics of hypersonic flows. However adding visocity will completely change the flow dynamics of the problem.<br>
+            We shall be discussing about <b>Governing Equations</b>,<b>Boundary Layer Equation</b>, <b>Similarity Parameters</b> and so on.
+        </p>
+        <!--Chatgpt on what vicocity does to hypersonic flow-->
+        <p>
+                CHATGPT : <br>
+                <ul>
+                    <li>
+                        Imagine a smooth hypothetical fluid with zero friction inside it — this is the concept behind inviscid flow. The air simply glides over the object, and the fluid speed right at the surface of the object matches the free stream speed without slowing down. There is no region near the surface where the air slows or sticks to the surface. Because of this, there is no shear stress or friction between the air and the object's surface, and no heat is generated from this interaction. The shock waves and flow patterns can be predicted without accounting for these near-surface layers.
+                    </li>
+                    <li>
+                        Now, in reality, air has viscosity — it resists motion at the molecular level. When air flows over a surface at hypersonic speed, the air molecules closest to the object are slowed down almost to zero relative to the surface because of this resistance (this is called the no-slip condition). As you move away from the surface, the air speed gradually increases until it reaches the free stream speed. This gradual change happens in a thin region called the boundary layer. Developing this boundary layer requires energy. The overall fast-moving air loses kinetic energy in this region due to friction between layers of air molecules moving at different speeds.
+
+                    </li>
+                    <li>
+                        <div class="imp">This lost kinetic energy doesn't vanish.</div> It changes into heat, raising the temperature in the boundary layer near the surface. Higher temperature increases the thickness of this layer because the properties of air (like viscosity) depend on temperature. So, the boundary layer gets thicker and interacts strongly with the shock wave that forms in front of the object at hypersonic speeds.
+
+                    </li>
+                    <li>
+                        This interaction causes the shock wave to move and change shape compared to what would be predicted without viscosity. The thicker boundary layer acts like the object is slightly larger, which affects the air pressure on the surface, how much drag the body experiences, and the amount of heat transferred to the body surface.
+
+                    </li>
+                </ul>
+        </p>
+    </p>
+        
+    <!--Slide 2-->
+    <hr>
+    <img src="./Lecture-9/Slide2.JPG" width="500px"/>
+    <p>
+        Adding viscocity to fluid flow, add two different complications and they are <b>Skin Friction</b> and <b>Aerodynamic Heating</b>.
+        <ol>
+            <li>Now the skin friction is ariseing because of <b>Velocity gradient</b> in the boundary layer.</li>
+            <li>And the Aerodynamic Heating is because of the <b>Temperature gradient</b> in the boundary layer.</li>
+        </ol>
+        <!--Doubt 1-->
+        <p>
+            The Skin friction is arising due to velocity gradient present in the boundary layer, which is true. But the Aerodynamics heating is happening because of the gradient in temperature present in the boundary layer.<br>
+            <details>
+                <summary>Why Temperature Gradient causes Aerodyanmics Heating?</summary>
+                <p>
+                    When ever there is viscocity in the fluid there will exist layers of fluid that is rubbing on each other. And since the fluid is not invicid (smooth) but viscous this rubbing will cause the relative velocicity betwene the fluid particale to slow down (just like two objects when rubbed will cause them to slow down with resect to each other). But just like in case of objecting getting rub, due to friction they will also be heated. Similarly in fluid this viscoicty will make the fluid layers to get warmmed compared to other, creating <b>Temperature gradient</b>.
+                </p>
+                <p>
+                    <b>Is it necessary to have temperature gradient for Aerodynamic heating?</b> Aerodynamic heating is fundamentally related to the temperature gradient within the boundary layer, not just the presence of a high temperature itself.<br>
+                    Aerodynamic heating occurs due to the conversion of kinetic energy into thermal energy via viscous dissipation in the fluid near the surface, generating heat.<br>
+                    if there is no gradient of velocity in the boundary layer (which also means to have gradient in temperature), there wont be generation of heat, and hence no aerodynamics heating.
+                </p>
+            </details>
+        </p>
+        For Subsonic flows, skin friction is dominant, <u>But in hypersoic flows both skin friction and temperature gradients is dominant.</u>. Now what amongst the two, temperature gradient and skin friction, is more important? This depends on the vehicle.<br>
+        For vehicles that are travelling with in the atmosphere, <u>skin friction will be dominant</u>.
+        Vehicles that enter into the atmosphere will experience lots of wave drag (Pressure drag) and less of skkin friction drag. Primarily because of there shape (Blunt, whcih creates stong bow shocks).
+    </p>
+
+    <!--Slide 3-->
+    <hr>
+    <h2>Governing Equations</h2>
+    <img src="./Lecture-9/Slide3.JPG" width="500px"/>
+    <p>
+        <p>
+            Governing eqaution for fluid mechanics is called the <b>Navier Strokes Equation</b>.
+            When the assumption of invicid flow is made in the equation it changes it into <b>Euler Equation</b>.
+            Introducing Viscoicty will introduce <b>Viscous Normal Stress</b> and <b>Visocus Shear Stress</b>, which appears in the momentum equation and 
+            in the energy equation. Also introducing the viscocity will introduce thremal conduction appearing in the energy equation.
+        </p>
+        <detials>
+            <summary>Isn't Normal Viscous Force, Pressure?</summary>
+            <p>
+                Normal viscous stress is different from pressure, though both act normal (perpendicular) to a surface.<br>
+                Pressure is an isotropic normal stress caused by the fluid's thermodynamic state—essentially, it acts equally in all directions and is not related to viscosity. <br>
+                Normal viscous stress, on the other hand, arises because of the fluid's viscosity and the rate of deformation (strain rate) of the fluid element.
+                Bulk viscosity specifically relates to the fluid's resistance to volumetric (compressional) deformation at a rate, which contributes to the normal viscous stresses in compressible flows. <span style="color: red;">Recall AE312 (Shear Flow)</span>.
+            </p>
+        </detials>
+        <p>
+            To the right surface and normal shear stress are given.
+        </p>
+        <p>
+            The above set of governing equations are valid for all kinds of flows, but finally it could reduced to some simpler equation in case of 
+            hypersonics flows.
+        </p>
+    </p>
+        
+    <!--Slide 4-->
+    <hr>
+    
+    <img src="./Lecture-9/Slide4.JPG" width="500px"/>
+    <p>
+        <h2>Similarity Parameter and Boundary Condition</h2>
+        <p>
+            Now we Non-dimensionalise the governing equations using the above mentioned variables. They are variables at free stream. Except for X and Y cordinates which
+            is non dimensionalised by dimension of the body (Characteristic Length).<br>
+            The variables listed above are:<br>
+            \(\rho\) : Density, \(\bar{u}\) : X-Velocity, \(\bar{v}\) : Y-Velocity, \(\abr{p}\) : Pressure, \(e\) : Internal Energy, \(\meu\) : Viscocity, \(\bar{x}, \bar{y}\) : Dimensions, \(\k\) : Thermal Conductivity, \(T\) : Temperature.
+        </p>
+    </p>
+
+    <!--Slide 5-->
+    <hr>
+    <img src="./Lecture-9/Slide5.JPG" width="500px"/>
+    <p>
+        <h2>Non Dimensionalising 2D Governing Equation</h2>
+        <p>
+            We have considered no volumetric heat addition and rejection.
+        </p>
+        <p>
+            The Non Dimensionalised governing equation is given in the above image. And this is obtained by using the same variables for non dimmensionalising the varibales.
+            There are four non dimensionalised parameter appearing in the equation. And they are:
+            <ol class="imp">
+                <li>Mach number \(M_{\infty}\)</li>
+                <li>Prandlt's Number \(P_{\infty}\)</li>
+                <li>Reynold's Number \(Re_{\infty}\)</li>
+                <li>Ratio of Specific Heat \(\gamma\)</li>
+            </ol> 
+        </p>
+    </p>
+       
+    <!--Slide 6-->
+    <hr>
+    <img src="./Lecture-9/Slide6.JPG" width="500px"/>
+    <p>
+        <h2>Understanding the Non-Dimensional Constants</h2>
+        For the case of Invicid flow, we only had one Similarity parameter, we have only two similarity variables and that is <b>Mach Number</b> and <b>Gamma (Ratio of specific heats)</b>.
+        With the addition of viscocity, we have got two other similarity paramter, and they are <b>Reynold's Number</b>, and <b>Prandlt Number</b>.
+        Here is the breif introduction about the four Similarity Parrameter (GPT):
+        <ol>
+            <li>
+                <b>Reynolds number</b> is about the balance between inertial forces and viscous forces in a fluid. If you already know this well, then the other parameters are similar in that each describes a balance or ratio of important physical effects, but in different contexts.
+            </li>
+            <li>
+                <b>Prandlt's number: </b> It is the ratio of how fast momentum (or movement) spreads through the fluid to how fast heat spreads through it.
+                If the Prandtl number is small, it means heat spreads much faster than the fluid's motion. This happens in fluids like liquid metals.
+                If the Prandtl number is large, it means the fluid's motion spreads faster than heat does. This is true for fluids like oils, where the velocity boundary layer is thicker than the thermal boundary layer.
+            </li>
+            <li>
+                <b>Mach number</b> describes the ratio of flow speed to sound speed, indicating how compressible or shock-prone the flow is. It affects how pressure and density change in high-speed flight.
+            </li>
+            <li>
+                <b>Gamma (ratio of specific heats)</b> tells how gases respond to heating and compression, influencing flow temperature and pressure relations.
+            </li>
+        </ol>
+    </p>
+
+    <!--Slide 7-->
+    <hr>
+    <img src="./Lecture-9/Slide7.JPG" width="500px"/>
+    <p>
+        <h2>Wall Boundary</h2>
+        <p>
+            <b>Velocity at the body surface is equal to zero (\(u = 0 \ v = 0\)).</b> And this is always the case. But the condition on the temperature on the wall could be of many types.
+            <ul>
+                <li>Could have temperature of the wall to be constant through out.</li>
+                <li>Could have the temperature of the wall to be varing as the function of wall displacment (s)</li>
+                <li><b>A more appropriate boundary condition could be to use the fourier law of heating, and put the condition on heat flow through the wall.</b></li>
+                <li>If the wall is adiablatic then there is <b>no heat transfer</b> across the wall, and hence the heat flow will be zero through the walls. The wall temperature in this case is called <b>Equillibrium Wall Temperature</b> or <b>Adiabatic Wall Temperature</b>.</li>
+            </ul>
+            <b>Which one of the above condition is more realistic? (GPT)</b>
+            <p>
+                In the context of hypersonic flows, the most common wall boundary condition for temperature used in simulations and analysis is the <b>Adiabatic Wall Condition</b>.<br>This condition assumes that no heat is transferred through the wall, meaning the wall acts like an insulator with zero heat flux.
+                The reason this condition is often used is that hypersonic vehicles face extremely high heating rates, and the wall temperature often rises quickly due to friction and shock heating. In many practical cases, the wall material and thermal protection system behave like near-insulators on the short timescales of flow, making the adiabatic assumption realistic for initial design and analysis.
+            </p>
+        </p>
+    </p>
+        
+    <!--Slide 8-->
+    <hr>
+    <img src="./Lecture-9/Slide8.JPG" width="500px"/>
+    <p>
+        <h2>Another Similarity Parameter</h2>
+        <p>
+            Temperature boundary condition at the wall introduces another similarity parameter, and that is \(\frac{T_w}{T_{\infty}}\).<br>
+            And this actually comes from the non dimensioanl internal energy. (Look at the slide). But it should be noted that the assumption for writng the internal energy in terms of heat capacity at consatnt volume and temperature is when, <b>gas is calorifically perfect</b>.
+        </p>
+    </p>
+        
+    <!--Slide 9-->
+    <hr>
+    <h2>Summary</h2>
+    <p>
+        So finally we have seen the <b>governing equation</b> of the viscous hypersonic flow. We have also discussed the <b>similarity paramters</b>, and also the <b>boundary conditions</b> for the governing equations. (without derivation)
+    </p>
+
+    <a href="./Index.html">Top of the Page</a>
+    </body>
+</html>
